@@ -5,12 +5,12 @@ def calculate(list):
         raise ValueError('List must contain nine numbers.')
     
     else:
-        matriz = []
+        matriz = np.zeros((1, 3))
         for i in range(0, 9, 3):
-            arreglo = list[i: i + 3]
-            matriz.append(arreglo)
+            arreglo = np.array(list[i: i + 3])
+            matriz = np.vstack([matriz, arreglo])
         
-        matriz = np.array(matriz)
+        matriz = matriz[1:]
 
 
     calculations = None
